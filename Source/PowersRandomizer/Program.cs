@@ -31,14 +31,14 @@ namespace Randomizer
                 "Vitality"
             };
 
-            Console.WriteLine("Powers: ",Console.ForegroundColor = ConsoleColor.Blue);
+            Console.WriteLine("Powers: ", Console.ForegroundColor = ConsoleColor.Blue);
             var listOfPowers = RandomizePowers(powers);
             DisplayPowers(listOfPowers);
 
-            Console.WriteLine();
-            Console.WriteLine("Passives: ", Console.ForegroundColor = ConsoleColor.Red);
-            var listOfPassives = RandomizePassives(passives);
-            DisplayPowers(listOfPassives);
+            //Console.WriteLine();
+            //Console.WriteLine("Passives: ", Console.ForegroundColor = ConsoleColor.Red);
+            //var listOfPassives = RandomizePassives(passives);
+            //DisplayPowers(listOfPassives);
         }
 
         public static List<string> RandomizePowers(List<string> powers)
@@ -46,14 +46,16 @@ namespace Randomizer
             List<string> result = new List<string>();
             Random random = new Random();
 
+
             for (int i = 0; i < 3; i++)
             {
-                var randomNumber = random.Next(0, powers.Count - 1);
-                string power = powers[randomNumber];
-                result.Add(power);
+                var shuffledPowerList = Shuffle(powers);
+                result.Add(shuffledPowerList[0]);
             }
             return result;
         }
+
+
 
         public static List<string> RandomizePassives(List<string> passives)
         {
@@ -75,6 +77,20 @@ namespace Randomizer
             {
                 Console.WriteLine($"{power}");
             }
+        }
+
+        private static List<string> Shuffle(List<string> listToShuffle)
+        {
+            Random r = new Random();
+            List<string> shuffledList = new List<string>();
+            for (int n = listToShuffle.Count - 1; n > 0; --n)
+            {
+                int k = r.Next(n + 1);
+                var temp = listToShuffle[n];
+                listToShuffle[n] = listToShuffle[k];
+                listToShuffle[k] = temp;
+            }
+            return shuffledList;
         }
     }
 }
