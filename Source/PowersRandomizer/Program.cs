@@ -41,7 +41,7 @@ namespace Randomizer
             //DisplayPowers(listOfPassives);
         }
 
-        public static List<string> RandomizePowers(List<string> powers)
+        private static List<string> RandomizePowers(List<string> powers)
         {
             List<string> result = new List<string>();
             Random random = new Random();
@@ -50,14 +50,30 @@ namespace Randomizer
             for (int i = 0; i < 3; i++)
             {
                 var shuffledPowerList = Shuffle(powers);
-                result.Add(shuffledPowerList[0]);
+                if (!result.Contains(shuffledPowerList[0]))
+                {
+                    result.Add(shuffledPowerList[0]);
+                }
             }
             return result;
         }
 
+        private static List<string> Shuffle(List<string> listToShuffle)
+        {
+            Random r = new Random();
+            List<string> shuffledList = new List<string>();
+            for (int n = listToShuffle.Count - 1; n > 0; --n)
+            {
+                int k = r.Next(n + 1);
+                var temp = listToShuffle[n];
+                listToShuffle[n] = listToShuffle[k];
+                listToShuffle[k] = temp;
+                shuffledList.Add(listToShuffle[k]);
+            }
+            return shuffledList;
+        }
 
-
-        public static List<string> RandomizePassives(List<string> passives)
+        private static List<string> RandomizePassives(List<string> passives)
         {
             List<string> result = new List<string>();
             Random random = new Random();
@@ -71,26 +87,12 @@ namespace Randomizer
             return result;
         }
 
-        public static void DisplayPowers(List<string> listOfPowers)
+        private static void DisplayPowers(List<string> listOfPowers)
         {
             foreach (var power in listOfPowers)
             {
                 Console.WriteLine($"{power}");
             }
-        }
-
-        private static List<string> Shuffle(List<string> listToShuffle)
-        {
-            Random r = new Random();
-            List<string> shuffledList = new List<string>();
-            for (int n = listToShuffle.Count - 1; n > 0; --n)
-            {
-                int k = r.Next(n + 1);
-                var temp = listToShuffle[n];
-                listToShuffle[n] = listToShuffle[k];
-                listToShuffle[k] = temp;
-            }
-            return shuffledList;
         }
     }
 }
