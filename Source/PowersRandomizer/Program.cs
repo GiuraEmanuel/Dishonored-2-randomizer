@@ -35,10 +35,10 @@ namespace Randomizer
             var listOfPowers = RandomizePowers(powers);
             DisplayPowers(listOfPowers);
 
-            //Console.WriteLine();
-            //Console.WriteLine("Passives: ", Console.ForegroundColor = ConsoleColor.Red);
-            //var listOfPassives = RandomizePassives(passives);
-            //DisplayPowers(listOfPassives);
+            Console.WriteLine();
+            Console.WriteLine("Passives: ", Console.ForegroundColor = ConsoleColor.Red);
+            var listOfPassives = RandomizePassives(passives);
+            DisplayPowers(listOfPassives);
         }
 
         private static List<string> RandomizePowers(List<string> powers)
@@ -78,11 +78,14 @@ namespace Randomizer
             List<string> result = new List<string>();
             Random random = new Random();
 
+
             for (int i = 0; i < 3; i++)
             {
-                var randomNumber = random.Next(0, passives.Count - 1);
-                string passive = passives[randomNumber];
-                result.Add(passive);
+                var shuffledPassivesList = Shuffle(passives);
+                if (!result.Contains(shuffledPassivesList[0]))
+                {
+                    result.Add(shuffledPassivesList[0]);
+                }
             }
             return result;
         }
