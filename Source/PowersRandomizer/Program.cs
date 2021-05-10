@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Randomizer
+namespace PowersRandomizer
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Randomizer randomizer = new Randomizer();
             List<string> powers = new List<string>()
             {
                 "Bend Time",
@@ -32,62 +33,15 @@ namespace Randomizer
             };
 
             Console.WriteLine("Powers: ", Console.ForegroundColor = ConsoleColor.Blue);
-            var listOfPowers = RandomizePowers(powers);
+            var listOfPowers = randomizer.RandomizePowers(powers);
             DisplayPowers(listOfPowers);
+            Console.WriteLine("", Console.ForegroundColor = ConsoleColor.White);
 
             Console.WriteLine();
             Console.WriteLine("Passives: ", Console.ForegroundColor = ConsoleColor.Red);
-            var listOfPassives = RandomizePassives(passives);
+            var listOfPassives = randomizer.RandomizePassives(passives);
             DisplayPowers(listOfPassives);
-        }
-
-        private static List<string> RandomizePowers(List<string> powers)
-        {
-            List<string> result = new List<string>();
-            Random random = new Random();
-
-
-            for (int i = 0; i < 3; i++)
-            {
-                var shuffledPowerList = Shuffle(powers);
-                if (!result.Contains(shuffledPowerList[0]))
-                {
-                    result.Add(shuffledPowerList[0]);
-                }
-            }
-            return result;
-        }
-
-        private static List<string> Shuffle(List<string> listToShuffle)
-        {
-            Random r = new Random();
-            List<string> shuffledList = new List<string>();
-            for (int n = listToShuffle.Count - 1; n > 0; --n)
-            {
-                int k = r.Next(n + 1);
-                var temp = listToShuffle[n];
-                listToShuffle[n] = listToShuffle[k];
-                listToShuffle[k] = temp;
-                shuffledList.Add(listToShuffle[k]);
-            }
-            return shuffledList;
-        }
-
-        private static List<string> RandomizePassives(List<string> passives)
-        {
-            List<string> result = new List<string>();
-            Random random = new Random();
-
-
-            for (int i = 0; i < 3; i++)
-            {
-                var shuffledPassivesList = Shuffle(passives);
-                if (!result.Contains(shuffledPassivesList[0]))
-                {
-                    result.Add(shuffledPassivesList[0]);
-                }
-            }
-            return result;
+            Console.WriteLine("", Console.ForegroundColor = ConsoleColor.White);
         }
 
         private static void DisplayPowers(List<string> listOfPowers)
