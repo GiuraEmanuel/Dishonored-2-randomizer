@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowersRandomizer", "PowersRandomizer\PowersRandomizer.csproj", "{FFC0B098-37AE-436A-98DD-19D593B253B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowersRandomizer", "PowersRandomizer\PowersRandomizer.csproj", "{FFC0B098-37AE-436A-98DD-19D593B253B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowersRandomizer.Tests", "PowersRandomizer.Tests\PowersRandomizer.Tests.csproj", "{707DD24C-1B52-44A5-AB2A-8BCB52878364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,18 @@ Global
 		{FFC0B098-37AE-436A-98DD-19D593B253B9}.Release|x64.Build.0 = Release|Any CPU
 		{FFC0B098-37AE-436A-98DD-19D593B253B9}.Release|x86.ActiveCfg = Release|Any CPU
 		{FFC0B098-37AE-436A-98DD-19D593B253B9}.Release|x86.Build.0 = Release|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Debug|x64.Build.0 = Debug|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Debug|x86.Build.0 = Debug|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Release|x64.ActiveCfg = Release|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Release|x64.Build.0 = Release|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Release|x86.ActiveCfg = Release|Any CPU
+		{707DD24C-1B52-44A5-AB2A-8BCB52878364}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

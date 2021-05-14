@@ -54,7 +54,7 @@ namespace PowersRandomizer
                 throw new NullReferenceException("List is empty.");
             }
 
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\Quickstall\Desktop\Dishonored 2 randomizer project\Test.txt"))
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\Quickstall\Desktop\Dishonored 2 randomizer project\Test.txt", true))
             {
                 foreach (var itemToSave in listToSave)
                 {
