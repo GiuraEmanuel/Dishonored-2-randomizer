@@ -37,7 +37,6 @@ namespace PowersRandomizer
             DisplayPowers(listOfPowers);
             Console.WriteLine("", Console.ForegroundColor = ConsoleColor.White);
 
-            Console.WriteLine();
             Console.WriteLine("Passives: ", Console.ForegroundColor = ConsoleColor.Red);
             var listOfPassives = randomizer.RandomizePassives(passives);
             DisplayPowers(listOfPassives);

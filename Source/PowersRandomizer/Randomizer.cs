@@ -49,12 +49,11 @@ namespace PowersRandomizer
 
         private void SaveToFile(List<string> listToSave)
         {
-            if (listToSave == null)
-            {
-                throw new NullReferenceException("List is empty.");
-            }
-
-            using (StreamWriter writer = new StreamWriter(@"C:\Users\Quickstall\Desktop\Dishonored 2 randomizer project\Test.txt", true))
+            var dirPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            dirPath = Path.Combine(dirPath, "Dishonored 2 Randomizer");
+            Directory.CreateDirectory(dirPath);
+            var filePath = Path.Combine(dirPath, "Data.txt");
+            using (StreamWriter writer = new StreamWriter(filePath, true))
             {
                 foreach (var itemToSave in listToSave)
                 {

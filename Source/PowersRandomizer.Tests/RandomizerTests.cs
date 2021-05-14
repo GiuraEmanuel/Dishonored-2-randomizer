@@ -28,7 +28,6 @@ namespace PowersRandomizer.Tests
             var randomizedList = randomizer.RandomizePowers(powers);
             var distinctList = randomizedList.Distinct().ToList();
 
-            Assert.
         }
     }
 }
