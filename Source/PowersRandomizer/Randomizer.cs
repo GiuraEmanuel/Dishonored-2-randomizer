@@ -1,11 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
 
 namespace PowersRandomizer
 {
+    public class Set
+    {
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public List<string> Powers { get; set; } = new();
+        public List<string> Passives { get; set; } = new();
+    }
+
+    public class Data
+    {
+        public List<Set> Sets { get; set; } = new();
+    }
+
     public class Randomizer
     {
+
         public List<string> RandomizePowers(List<string> powers)
         {
             List<string> result = new List<string>();
@@ -53,13 +67,12 @@ namespace PowersRandomizer
             dirPath = Path.Combine(dirPath, "Dishonored 2 Randomizer");
             Directory.CreateDirectory(dirPath);
             var filePath = Path.Combine(dirPath, "Data.txt");
-            using (StreamWriter writer = new StreamWriter(filePath, true))
-            {
-                foreach (var itemToSave in listToSave)
-                {
-                    writer.WriteLine(itemToSave);
-                }
-            }
+
+            var data = new Data();
+            // [add stuff to data here]
+
+            string json = JsonSerializer.Serialize(data);
+            File.WriteAllText(filePath, json);
         }
     }
 }

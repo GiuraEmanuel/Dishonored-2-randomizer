@@ -41,6 +41,7 @@ namespace PowersRandomizer
             var listOfPassives = randomizer.RandomizePassives(passives);
             DisplayPowers(listOfPassives);
             Console.WriteLine("", Console.ForegroundColor = ConsoleColor.White);
+
         }
 
         private static void DisplayPowers(List<string> listOfPowers)
@@ -49,6 +50,7 @@ namespace PowersRandomizer
             {
                 Console.WriteLine($"{power}");
             }
+            Console.WriteLine();
         }
     }
 }
