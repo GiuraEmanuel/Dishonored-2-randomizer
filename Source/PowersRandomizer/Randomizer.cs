@@ -8,7 +8,6 @@ namespace PowersRandomizer
 
     public class Randomizer
     {
-
         List<string> powers = new List<string>()
             {
                 "Bend Time",
@@ -33,7 +32,6 @@ namespace PowersRandomizer
                 "Vitality"
             };
 
-
         public void RandomizePowers(Set powerSet)
         {
             var shuffledPowersList = Shuffle(powers);
@@ -55,7 +53,7 @@ namespace PowersRandomizer
         private List<string> Shuffle(List<string> listToShuffle)
         {
             Random r = new Random();
-            List<string> shuffledList = new List<string>();
+            List<string> shuffledList = new List<string>(listToShuffle);
 
             for (int n = shuffledList.Count - 1; n > 0; --n)
             {
