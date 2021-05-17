@@ -5,38 +5,57 @@ using System.Text.Json;
 
 namespace PowersRandomizer
 {
-    public class Set
-    {
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public List<string> Powers { get; set; } = new();
-        public List<string> Passives { get; set; } = new();
-    }
-
-    public class Data
-    {
-        public List<Set> Sets { get; set; } = new();
-    }
 
     public class Randomizer
     {
 
-        public List<string> RandomizePowers(List<string> powers)
-        {
-            List<string> result = new List<string>();
+        List<string> powers = new List<string>()
+            {
+                "Bend Time",
+                "Devouring Swarm",
+                "Possesion",
+                "Windblast",
+                "Dark Vision",
+                "Domino",
+                "Doppelgänger",
+                "Mesmerize",
+                "Shadow Walk",
+            };
 
+        List<string> passives = new List<string>()
+            {
+                "Blood Thirst",
+                "Agility",
+                "Bonecharm Crafting",
+                "Reflexes",
+                "Shadow Kill",
+                "Strength",
+                "Vitality"
+            };
+
+
+        public void RandomizePowers(Set powerSet)
+        {
             var shuffledPowersList = Shuffle(powers);
             for (int i = 0; i < 3; i++)
             {
-                result.Add(shuffledPowersList[i]);
+                powerSet.Powers.Add(shuffledPowersList[i]);
             }
-            SaveToFile(result);
-            return result;
+        }
+
+        public void RandomizePassives(Set passivesSet)
+        {
+            var shuffledPowersList = Shuffle(passives);
+            for (int i = 0; i < 3; i++)
+            {
+                passivesSet.Passives.Add(shuffledPowersList[i]);
+            }
         }
 
         private List<string> Shuffle(List<string> listToShuffle)
         {
             Random r = new Random();
-            List<string> shuffledList = new List<string>(listToShuffle);
+            List<string> shuffledList = new List<string>();
 
             for (int n = shuffledList.Count - 1; n > 0; --n)
             {
