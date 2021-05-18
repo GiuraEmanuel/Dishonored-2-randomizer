@@ -10,7 +10,9 @@ namespace PowersRandomizer
             Set set = new();
             randomizer.RandomizePowers(set);
             randomizer.RandomizePassives(set);
+            randomizer.SaveToFile(set);
             DisplayPowers(set);
+            
 
         }
 

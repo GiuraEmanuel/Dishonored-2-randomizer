@@ -5,7 +5,6 @@ using System.Text.Json;
 
 namespace PowersRandomizer
 {
-
     public class Randomizer
     {
         List<string> powers = new List<string>()
@@ -65,20 +64,7 @@ namespace PowersRandomizer
             return shuffledList;
         }
 
-        public List<string> RandomizePassives(List<string> passives)
-        {
-            List<string> result = new List<string>();
-
-            var shuffledPassivesList = Shuffle(passives);
-            for (int i = 0; i < 3; i++)
-            {
-                result.Add(shuffledPassivesList[i]);
-            }
-            SaveToFile(result);
-            return result;
-        }
-
-        private void SaveToFile(List<string> listToSave)
+        public void SaveToFile(Set setToSave)
         {
             var dirPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             dirPath = Path.Combine(dirPath, "Dishonored 2 Randomizer");
@@ -86,10 +72,10 @@ namespace PowersRandomizer
             var filePath = Path.Combine(dirPath, "Data.txt");
 
             var data = new Data();
-            // [add stuff to data here]
+            data.Sets.Add(setToSave);
 
             string json = JsonSerializer.Serialize(data);
-            File.WriteAllText(filePath, json);
+            File.AppendAllText(filePath, json);
         }
     }
 }
