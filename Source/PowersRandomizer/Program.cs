@@ -12,10 +12,7 @@ namespace PowersRandomizer
             randomizer.RandomizePassives(set);
             randomizer.SaveToFile(set);
             DisplayPowers(set);
-            
-
         }
-
         private static void DisplayPowers(Set set)
         {
             foreach (var power in set.Powers)
