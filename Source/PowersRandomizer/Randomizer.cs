@@ -25,6 +25,7 @@ namespace PowersRandomizer
             { "Doppelgänger", 2.5},
             { "Mesmerize", 2.5},
             { "Shadow Walk", 2.5},
+
             { "Blood Thirst",5 },
             { "Agility", 0},
             {"Bonecharm Crafting",2.5 },
@@ -34,7 +35,7 @@ namespace PowersRandomizer
             { "Vitality", 0}
         };
 
-        List<string> nonLethalAbilities = new List<string>()
+        List<string> nonLethalPowersList = new List<string>()
         {
             "Bend Time",
             "Possesion",
@@ -43,11 +44,24 @@ namespace PowersRandomizer
             "Doppelgänger",
             "Mesmerize",
             "Shadow Walk",
-            "",
-            "",
-            "",
-            "",
-            "",
+        };
+        List<string> nonLethalPassivesList = new List<string>()
+        {
+            "Agility",
+            "Strength",
+            "Vitality",
+            "Bonecharm Crafting",
+        };
+        List<string> lethalPowersList = new List<string>()
+        {
+            "Devouring Swarm",
+            "Windblast",
+        };
+        List<string> lethalPassivesList = new List<string>()
+        {
+            "Blood Thirst",
+            "Reflexes",
+            "Shadow Kill",
         };
 
         List<string> powers = new List<string>()
