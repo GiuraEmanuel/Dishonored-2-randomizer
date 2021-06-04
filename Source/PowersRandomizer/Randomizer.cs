@@ -9,61 +9,6 @@ namespace PowersRandomizer
 
     public class Randomizer
     {
-        // Ranks powers and passives based on their "inborn" lethality 
-        // 1 - nonlethal
-        // 5 - lethal
-        // 2.5 - these abilities can be used for both lethal and nonlethal play
-        // 0 - can't be ranked
-        private Dictionary<string, double> abilitiesToRankLookUp = new Dictionary<string, double>()
-        {
-            { "Bend Time", 2.5},
-            { "Devouring Swarm", 5},
-            { "Possesion" , 2.5},
-            { "Windblast", 5},
-            { "Dark Vision", 1},
-            { "Domino", 1},
-            { "Doppelgänger", 2.5},
-            { "Mesmerize", 2.5},
-            { "Shadow Walk", 2.5},
-
-            { "Blood Thirst",5 },
-            { "Agility", 0},
-            {"Bonecharm Crafting",2.5 },
-            { "Reflexes", 5},
-            { "Shadow Kill", 5},
-            { "Strength", 0},
-            { "Vitality", 0}
-        };
-
-        List<string> nonLethalPowersList = new List<string>()
-        {
-            "Bend Time",
-            "Possesion",
-            "Dark Vision",
-            "Domino",
-            "Doppelgänger",
-            "Mesmerize",
-            "Shadow Walk",
-        };
-        List<string> nonLethalPassivesList = new List<string>()
-        {
-            "Agility",
-            "Strength",
-            "Vitality",
-            "Bonecharm Crafting",
-        };
-        List<string> lethalPowersList = new List<string>()
-        {
-            "Devouring Swarm",
-            "Windblast",
-        };
-        List<string> lethalPassivesList = new List<string>()
-        {
-            "Blood Thirst",
-            "Reflexes",
-            "Shadow Kill",
-        };
-
         List<string> powers = new List<string>()
             {
                 "Bend Time",
