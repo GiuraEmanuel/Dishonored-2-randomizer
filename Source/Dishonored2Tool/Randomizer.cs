@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace PowersRandomizer
+namespace Dishonored2Tool
 {
 
     public class Randomizer

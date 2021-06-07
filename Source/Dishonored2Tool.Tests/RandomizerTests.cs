@@ -1,8 +1,9 @@
+using Dishonored2Tool;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PowersRandomizer.Tests
+namespace Dishonored2Tool.Tests
 {
     [TestClass]
     public class RandomizerTests
@@ -24,10 +25,6 @@ namespace PowersRandomizer.Tests
                 "Mesmerize",
                 "Shadow Walk",
             };
-
-            var randomizedList = randomizer.RandomizePowers(powers);
-            var distinctList = randomizedList.Distinct().ToList();
-
         }
     }
 }

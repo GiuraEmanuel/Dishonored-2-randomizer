@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Singulink.WPF.Data.MethodBinding" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dishonored2Tool.Models\Dishonored2Tool.Models.csproj" />
+    <ProjectReference Include="..\Dishonored2Tool.ViewModels\Dishonored2Tool.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

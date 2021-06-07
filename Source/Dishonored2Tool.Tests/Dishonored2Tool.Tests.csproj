@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PowersRandomizer\PowersRandomizer.csproj" />
+    <ProjectReference Include="..\Dishonored2Tool\Dishonored2Tool.csproj" />
   </ItemGroup>
 
 </Project>

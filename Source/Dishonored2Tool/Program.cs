@@ -1,17 +1,11 @@
 ﻿using System;
-namespace PowersRandomizer
+namespace Dishonored2Tool
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Randomizer randomizer = new Randomizer();
 
-            Set set = new();
-            randomizer.RandomizePowers(set);
-            randomizer.RandomizePassives(set);
-            randomizer.SaveToFile(set);
-            DisplayPowers(set);
         }
         private static void DisplayPowers(Set set)
         {

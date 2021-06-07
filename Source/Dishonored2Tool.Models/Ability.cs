@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace PowersRandomizer
+namespace Dishonored2Tool
 {
     public class Ability : AbilityBase, IEnumerable<IReadOnlyList<AbilityUpgrade>>
     {
@@ -9,7 +9,7 @@ namespace PowersRandomizer
 
         public IReadOnlyList<IReadOnlyList<AbilityUpgrade>> UpgradeChains => _upgradeChains;
 
-        public Ability(string name, int cost, Style style, Lethality lethality) : base(name, cost, style, lethality) { }
+        public Ability(string name, int cost, PlayStyle style, Lethality lethality) : base(name, cost, style, lethality) { }
 
         public void Add(params AbilityUpgrade[] upgradeChain)
         {

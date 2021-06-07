@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace PowersRandomizer
+namespace Dishonored2Tool
 {
     public class Data
     {
